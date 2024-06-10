@@ -15,7 +15,7 @@ import Form from './pages/Form';
 import CoursesDetail from './pages/CoursesDetail';
 import Footer from './pages/Footer';
 import Teacher from './pages/Teacher';
-import CountdownTimer from './components/CountdownTimer';
+import { Divider } from '@chakra-ui/react'; // Import Divider component
 import ThankYou from './pages/ThankYou';
 import SEO from './components/SEO';
 
@@ -37,47 +37,45 @@ function App() {
 
   return (
     <Router>
-            <SEO
+      <SEO
         title="Khóa học Lục Khí Cơ Bản"
         description="Khóa học Lục Khí giúp bạn tự chữa bệnh đơn giản, an toàn, hiệu quả bằng cách dán huyệt. Đăng ký ngay để tham gia."
         image="share.jpg" // Cập nhật đường dẫn tới ảnh của bạn
         url="https://luckhi.vn/lkcbzoom" // Cập nhật URL của trang web của bạn
       />
-
       <Routes>
         <Route path="/" element={
           <>
-            <CountdownTimer onClose={() => console.log('Closed')} />
             <Hero onRegisterClick={handleRegisterClick} />
             <TargetAudience onRegisterClick={handleRegisterClick} />
-            <CountdownTimer onClose={() => console.log('Closed')} />
-
+            <Divider my={8} borderColor="teal.500" />
             <BenefitsSection 
               onRegisterClick={handleRegisterClick}
               onViewResultsClick={handleViewResultsClick}
             />
+            <Divider my={8} borderColor="teal.500" />
             <TimelineSection onRegisterClick={handleRegisterClick} />
+            <Divider my={8} borderColor="teal.500" />
             <CoursesDetail />
-            <CountdownTimer onClose={() => console.log('Closed')} />
-
             <div ref={formRef}>
               <Form />
             </div>
+            <Divider my={8} borderColor="teal.500" />
             <Teacher />
+            <Divider my={8} borderColor="teal.500" />
             <VideoSection onRegisterClick={handleRegisterClick} />
-
+            <Divider my={8} borderColor="teal.500" />
             <PricingSection onRegisterClick={handleRegisterClick} />
-
+            <Divider my={8} borderColor="teal.500" />
             <FAQSection onRegisterClick={handleRegisterClick} />
-            <CountdownTimer onClose={() => console.log('Closed')} />
-
+            <Divider my={8} borderColor="teal.500" />
             <StatisticsSection onRegisterClick={handleRegisterClick} />
+            <Divider my={8} borderColor="teal.500" />
             <TestimonialsSection onRegisterClick={handleRegisterClick} />           
             <div ref={resultRef}>
               <Result onRegisterClick={handleRegisterClick} />
             </div>
-            <CountdownTimer onClose={() => console.log('Closed')} />
-
+            <Divider my={8} borderColor="teal.500" />
             <Footer />
           </>
         } />
@@ -85,7 +83,6 @@ function App() {
         <Route path="/registration" element={<Form />} />
         <Route path="/course-detail" element={<CoursesDetail />} />
         <Route path="/thankyou" element={<ThankYou />} />
-
       </Routes>
     </Router>
   );
